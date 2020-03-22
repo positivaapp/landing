@@ -4,6 +4,8 @@ import Row from '../General/Grid/Row'
 import Column from '../General/Grid/Column'
 import Container from '../General/Grid/Container'
 import Button from '../General/Buttons'
+import Bean from '../General/Others/Bean'
+import theme from '../../assets/positivaTheme'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -11,10 +13,71 @@ import Button from '../General/Buttons'
 const CallToAction = styled.section`
   background: ${({ theme }) => theme.colors.pink100};
   text-align: center;
+  > div {
+    position: relative;
+    overflow: hidden;
+    > svg {
+      width: 20rem;
+      height: auto;
+      position: absolute;
+      @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+        width: 28rem;
+      }
+    }
+    > svg:first-child {
+      bottom: -60%;
+      left: -50%;
+      @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+        bottom: -90%;
+        left: -40%;
+      }
+      @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+        bottom: -65%;
+        left: -15%;
+      }
+    }
+    > svg:nth-child(2) {
+      bottom: -65%;
+      left: -55%;
+      @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+        bottom: -95%;
+        left: -45%;
+      }
+      @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+        bottom: -70%;
+        left: -20%;
+      }
+    }
+    > svg:nth-child(3) {
+      top: -42%;
+      right: -38%;
+      z-index: 2;
+      @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+        top: -45%;
+        right: -35%;
+      }
+      @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+        top: -35%;
+        right: -20%;
+      }
+    }
+    > svg:nth-child(4) {
+      top: -36%;
+      right: -33%;
+      @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+        top: -40%;
+        right: -30%;
+      }
+      @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+        top: -32%;
+        right: -15%;
+      }
+    }
+  }
   h2 {
     color: ${({ theme }) => theme.colors.pink300};
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.75rem;
     ::before {
       content: '';
@@ -41,7 +104,11 @@ const CallToAction = styled.section`
 const CTA = () => {
   return (
     <CallToAction>
-      <Container spacingY={6}>
+      <Container fullWidth spacingY={6}>
+        <Bean color={theme.colors.pink200} />
+        <Bean color={theme.colors.pink300} />
+        <Bean color={theme.colors.pink200} />
+        <Bean color={theme.colors.pink300} />
         <Row>
           <Column sm={12} md={12} lg={12}>
             <h2>¿Listo para unirte?</h2>

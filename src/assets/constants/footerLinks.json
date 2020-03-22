@@ -2,21 +2,21 @@
   "social": [
     {
       "name": "Facebook",
-      "path": "https://facebook.com"
+      "path": "https://www.facebook.com/positivaapp"
     },
     {
       "name": "Instagram",
-      "path": "https://instagram.com"
+      "path": "https://www.instagram.com/positivaapp"
     }
   ],
   "legal": [
     {
       "name": "Términos y condiciones",
-      "path": "/"
+      "path": "/terminos"
     },
     {
       "name": "Aviso de privacidad",
-      "path": "/"
+      "path": "/privacidad"
     }
   ]
 }

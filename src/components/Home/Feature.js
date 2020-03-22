@@ -3,6 +3,7 @@ import Row from '../General/Grid/Row'
 import Column from '../General/Grid/Column'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
+import Bean from '../General/Others/Bean'
 import PropTypes from 'prop-types'
 
 /***************************/
@@ -14,12 +15,25 @@ const StyledFeature = styled.article`
       margin-left: 1.5rem;
       margin-right: 1.5rem;
     }
+    /* Image Container */
     > div:first-child {
+      position: relative;
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         margin-right: 1rem;
       }
       @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
         margin-right: 3rem;
+      }
+      svg {
+        position: absolute;
+        z-index: -1;
+        width: 18rem;
+        height: auto;
+        top: 0;
+        left: 0;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+          width: 20rem;
+        }
       }
     }
     > div:last-child {
@@ -58,12 +72,13 @@ const RoundedImg = styled(Image)`
 /***************************/
 /***** MAIN COMPONENT ******/
 /***************************/
-const Feature = ({ img, alt, title, description }) => {
+const Feature = ({ img, alt, title, description, beanColor, beanStyle }) => {
   return (
     <StyledFeature>
       <Row>
         <Column sm={12} md={6} lg={6}>
           <RoundedImg fluid={img} alt={alt} />
+          <Bean color={beanColor} style={beanStyle} />
         </Column>
         <Column sm={12} md={6} lg={6}>
           <h3>{title}</h3>
@@ -82,6 +97,8 @@ Feature.propTypes = {
   alt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  beanColor: PropTypes.string.isRequired,
+  beanStyle: PropTypes.object,
 }
 
 export default Feature

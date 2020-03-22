@@ -7,6 +7,7 @@ const positivaTheme = {
     black100: '#484848',
     black200: '#222222',
     blue100: '#030047',
+    blue200: '#211d7f',
     pink100: '#FFF6F8',
     pink200: '#FED0D6',
     pink300: '#FC4735',

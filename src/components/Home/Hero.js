@@ -7,6 +7,7 @@ import Outline from '../General/Typography/Titles'
 import theme from '../../assets/positivaTheme'
 import Button from '../General/Buttons'
 import illustration from '../../assets/images/Illustration.svg'
+import Bean from '../General/Others/Bean'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -49,6 +50,63 @@ const StyledHero = styled.header`
     /* Second Column */
     > div:last-child {
       background: ${({ theme }) => theme.colors.pink100};
+      position: relative;
+      overflow: hidden;
+      > svg {
+        position: absolute;
+        width: 20rem;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+          width: 23rem;
+        }
+      }
+      > svg:first-child {
+        bottom: -75%;
+        left: -50%;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+          bottom: -50%;
+          left: -30%;
+        }
+        @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+          bottom: -55%;
+          left: -35%;
+        }
+      }
+      > svg:nth-child(2) {
+        bottom: -80%;
+        left: -55%;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+          bottom: -55%;
+          left: -35%;
+        }
+        @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+          bottom: -60%;
+          left: -40%;
+        }
+      }
+      > svg:nth-child(3) {
+        top: -55%;
+        right: -33%;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+          top: -25%;
+          right: -27%;
+        }
+        @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+          top: -30%;
+          right: -32%;
+        }
+      }
+      > svg:nth-child(4) {
+        top: -60%;
+        right: -38%;
+        @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
+          top: -30%;
+          right: -32%;
+        }
+        @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
+          top: -35%;
+          right: -37%;
+        }
+      }
       img {
         width: 100%;
         padding-left: 4.5rem;
@@ -86,6 +144,10 @@ const Hero = () => {
           </Container>
         </Column>
         <Column sm={12} md={12} lg={6}>
+          <Bean color={theme.colors.pink200} />
+          <Bean color={theme.colors.pink300} />
+          <Bean color={theme.colors.pink300} />
+          <Bean color={theme.colors.pink200} />
           <Container>
             <img
               src={illustration}

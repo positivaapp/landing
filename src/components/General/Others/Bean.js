@@ -1,23 +1,19 @@
 import React from 'react'
-import theme from '../../../assets/positivaTheme'
+import PropTypes from 'prop-types'
 
-const Bean = ({ color = theme?.colors?.pink200 || '#000' }) => {
-  return (
-    <svg
-      width="260"
-      height="202"
-      viewBox="0 0 260 202"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M5.83247 -147.559C38.997 -222.512 249.855 -208.794 314.734 -111.493C379.614 -14.192 305.466 201.975 239 201.975C172.534 201.975 172.534 56.0267 145.128 13.1644C117.722 -29.6978 -27.332 -72.6058 5.83247 -147.559Z"
-        fill={color}
-      />
-    </svg>
-  )
+const Bean = ({ color, style = {} }) => (
+  <svg fill="none" width="435" height="494" viewBox="0 0 435 494" style={style}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.12 94.687C40.922 5.4 282.6-4.167 368.079 98.851c85.479 103.018 26.887 357.958-48.778 365.896-75.664 7.938-93.095-158.209-129.413-203.73-36.318-45.521-206.57-77.043-177.768-166.33z"
+      fill={color}
+    />
+  </svg>
+)
+
+Bean.propTypes = {
+  color: PropTypes.string.isRequired,
 }
 
 export default Bean

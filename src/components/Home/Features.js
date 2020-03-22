@@ -3,6 +3,7 @@ import Container from '../General/Grid/Container'
 import styled from 'styled-components'
 import Feature from './Feature'
 import { useStaticQuery, graphql } from 'gatsby'
+import theme from '../../assets/positivaTheme'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -114,6 +115,10 @@ const Features = () => {
           <li>
             <Feature
               img={protection.childImageSharp.fluid}
+              beanColor={theme.colors.pink300}
+              beanStyle={{
+                transform: 'translate(10%, -12%)',
+              }}
               alt="Persona sonriente frente al celular"
               title="Protegemos tu anonimato"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
@@ -125,6 +130,10 @@ const Features = () => {
           <li>
             <Feature
               img={health.childImageSharp.fluid}
+              beanColor={theme.colors.pink200}
+              beanStyle={{
+                transform: 'translate(10%, -15%) rotate(180deg)',
+              }}
               alt="Estetoscopio rosa"
               title="Toma el control de tu salud"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
@@ -136,6 +145,10 @@ const Features = () => {
           <li>
             <Feature
               img={community.childImageSharp.fluid}
+              beanColor={theme.colors.blue100}
+              beanStyle={{
+                transform: 'translate(10%, -15%) scaleX(-1) rotate(180deg)',
+              }}
               alt="Comunidad positiva+"
               title="Únete a la comunidad"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
