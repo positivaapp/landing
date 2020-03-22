@@ -6,6 +6,7 @@ import Container from '../General/Grid/Container'
 import Button from '../General/Buttons'
 import Bean from '../General/Others/Bean'
 import theme from '../../assets/positivaTheme'
+import { useInView } from 'react-intersection-observer'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -27,6 +28,7 @@ const CallToAction = styled.section`
     > svg:first-child {
       bottom: -60%;
       left: -50%;
+      stroke: ${({ theme }) => theme.colors.pink200};
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         bottom: -90%;
         left: -40%;
@@ -39,6 +41,7 @@ const CallToAction = styled.section`
     > svg:nth-child(2) {
       bottom: -65%;
       left: -55%;
+      stroke: ${({ theme }) => theme.colors.pink300};
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         bottom: -95%;
         left: -45%;
@@ -52,6 +55,7 @@ const CallToAction = styled.section`
       top: -42%;
       right: -38%;
       z-index: 2;
+      stroke: ${({ theme }) => theme.colors.pink200};
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         top: -45%;
         right: -35%;
@@ -64,6 +68,7 @@ const CallToAction = styled.section`
     > svg:nth-child(4) {
       top: -36%;
       right: -33%;
+      stroke: ${({ theme }) => theme.colors.pink300};
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         top: -40%;
         right: -30%;
@@ -102,13 +107,17 @@ const CallToAction = styled.section`
 /***** MAIN COMPONENT ******/
 /***************************/
 const CTA = () => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  })
+
   return (
     <CallToAction>
-      <Container fullWidth spacingY={6}>
-        <Bean color={theme.colors.pink200} />
-        <Bean color={theme.colors.pink300} />
-        <Bean color={theme.colors.pink200} />
-        <Bean color={theme.colors.pink300} />
+      <Container fullWidth spacingY={6} ref={ref}>
+        <Bean color={theme.colors.pink200} visible={inView} />
+        <Bean color={theme.colors.pink300} visible={inView} />
+        <Bean color={theme.colors.pink200} visible={inView} />
+        <Bean color={theme.colors.pink300} visible={inView} />
         <Row>
           <Column sm={12} md={12} lg={12}>
             <h2>¿Listo para unirte?</h2>

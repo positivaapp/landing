@@ -118,6 +118,7 @@ const Features = () => {
               beanColor={theme.colors.pink300}
               beanStyle={{
                 transform: 'translate(10%, -12%)',
+                stroke: theme.colors.pink300,
               }}
               alt="Persona sonriente frente al celular"
               title="Protegemos tu anonimato"
@@ -133,6 +134,7 @@ const Features = () => {
               beanColor={theme.colors.pink200}
               beanStyle={{
                 transform: 'translate(10%, -15%) rotate(180deg)',
+                stroke: theme.colors.pink200,
               }}
               alt="Estetoscopio rosa"
               title="Toma el control de tu salud"
@@ -148,6 +150,7 @@ const Features = () => {
               beanColor={theme.colors.blue100}
               beanStyle={{
                 transform: 'translate(10%, -15%) scaleX(-1) rotate(180deg)',
+                stroke: theme.colors.blue100,
               }}
               alt="Comunidad positiva+"
               title="Únete a la comunidad"

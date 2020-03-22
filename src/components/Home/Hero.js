@@ -8,6 +8,7 @@ import theme from '../../assets/positivaTheme'
 import Button from '../General/Buttons'
 import illustration from '../../assets/images/Illustration.svg'
 import Bean from '../General/Others/Bean'
+import { useInView } from 'react-intersection-observer'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -55,6 +56,9 @@ const StyledHero = styled.header`
       > svg {
         position: absolute;
         width: 20rem;
+        stroke-width: 2;
+        stroke-linejoin: round;
+        stroke-linecap: round;
         @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
           width: 23rem;
         }
@@ -62,6 +66,7 @@ const StyledHero = styled.header`
       > svg:first-child {
         bottom: -75%;
         left: -50%;
+        stroke: ${({ theme }) => theme.colors.pink200};
         @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
           bottom: -50%;
           left: -30%;
@@ -74,6 +79,7 @@ const StyledHero = styled.header`
       > svg:nth-child(2) {
         bottom: -80%;
         left: -55%;
+        stroke: ${({ theme }) => theme.colors.pink300};
         @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
           bottom: -55%;
           left: -35%;
@@ -86,6 +92,7 @@ const StyledHero = styled.header`
       > svg:nth-child(3) {
         top: -55%;
         right: -33%;
+        stroke: ${({ theme }) => theme.colors.pink300};
         @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
           top: -25%;
           right: -27%;
@@ -98,6 +105,7 @@ const StyledHero = styled.header`
       > svg:nth-child(4) {
         top: -60%;
         right: -38%;
+        stroke: ${({ theme }) => theme.colors.pink200};
         @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
           top: -30%;
           right: -32%;
@@ -124,6 +132,10 @@ const StyledHero = styled.header`
 /***** MAIN COMPONENT ******/
 /***************************/
 const Hero = () => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  })
+
   return (
     <StyledHero>
       <Row colGap={0}>
@@ -143,11 +155,11 @@ const Hero = () => {
             </Button>
           </Container>
         </Column>
-        <Column sm={12} md={12} lg={6}>
-          <Bean color={theme.colors.pink200} />
-          <Bean color={theme.colors.pink300} />
-          <Bean color={theme.colors.pink300} />
-          <Bean color={theme.colors.pink200} />
+        <Column sm={12} md={12} lg={6} ref={ref}>
+          <Bean color={theme.colors.pink200} visible={inView} />
+          <Bean color={theme.colors.pink300} visible={inView} />
+          <Bean color={theme.colors.pink300} visible={inView} />
+          <Bean color={theme.colors.pink200} visible={inView} />
           <Container>
             <img
               src={illustration}

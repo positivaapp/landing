@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Image from 'gatsby-image'
 import Bean from '../General/Others/Bean'
 import PropTypes from 'prop-types'
+import { useInView } from 'react-intersection-observer'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -31,6 +32,9 @@ const StyledFeature = styled.article`
         height: auto;
         top: 0;
         left: 0;
+        stroke-width: 2;
+        stroke-linejoin: round;
+        stroke-linecap: round;
         @media (min-width: ${({ theme }) => theme.mediaqueries.lg}) {
           width: 20rem;
         }
@@ -73,12 +77,16 @@ const RoundedImg = styled(Image)`
 /***** MAIN COMPONENT ******/
 /***************************/
 const Feature = ({ img, alt, title, description, beanColor, beanStyle }) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  })
+
   return (
-    <StyledFeature>
+    <StyledFeature ref={ref}>
       <Row>
         <Column sm={12} md={6} lg={6}>
           <RoundedImg fluid={img} alt={alt} />
-          <Bean color={beanColor} style={beanStyle} />
+          <Bean color={beanColor} style={beanStyle} visible={inView} />
         </Column>
         <Column sm={12} md={6} lg={6}>
           <h3>{title}</h3>
