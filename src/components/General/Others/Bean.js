@@ -32,8 +32,8 @@ const Bean = ({ color, style = {}, visible = true }) => {
         initial="hidden"
         animate={visible && 'visible'}
         transition={{
-          default: { duration: 1, ease: 'easeInOut' },
-          fill: { duration: 1, ease: [1, 0, 0.8, 1] },
+          default: { duration: 2, ease: 'easeInOut' },
+          fill: { duration: 2, ease: [1, 0, 0.8, 1] },
         }}
       />
     </motion.svg>
