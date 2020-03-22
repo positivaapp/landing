@@ -12,7 +12,7 @@ const StyledFeatures = styled.section`
   h2 {
     text-align: center;
     color: ${({ theme }) => theme.colors.black200};
-    margin-bottom: 4.5rem;
+    margin-bottom: 6rem;
     font-size: 1.75rem;
     line-height: 1.25;
     @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
@@ -37,7 +37,7 @@ const StyledFeatures = styled.section`
     li {
       margin-bottom: 7.5rem;
       :last-child {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         :nth-child(even) {
@@ -106,7 +106,7 @@ const Features = () => {
 
   return (
     <StyledFeatures>
-      <Container spacingY={3}>
+      <Container spacingY={5}>
         <h2>
           Una app <strong>positiva</strong> para personas con VIH
         </h2>

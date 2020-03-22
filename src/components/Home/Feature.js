@@ -44,7 +44,7 @@ const StyledFeature = styled.article`
       margin-top: auto;
       margin-bottom: auto;
       h3 {
-        margin-top: 2rem;
+        margin-top: 3rem;
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
