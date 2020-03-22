@@ -7,6 +7,7 @@ import Button from '../General/Buttons'
 import Bean from '../General/Others/Bean'
 import theme from '../../assets/positivaTheme'
 import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -111,16 +112,36 @@ const CTA = () => {
     threshold: 0,
   })
 
+  const headingAnimation = {
+    hidden: {
+      opacity: 0,
+      y: '-5%',
+    },
+    visible: {
+      opacity: 1,
+      y: '0',
+    },
+  }
+
   return (
-    <CallToAction>
-      <Container fullWidth spacingY={6} ref={ref}>
+    <CallToAction ref={ref}>
+      <Container fullWidth spacingY={6}>
         <Bean color={theme.colors.pink200} visible={inView} />
         <Bean color={theme.colors.pink300} visible={inView} />
         <Bean color={theme.colors.pink200} visible={inView} />
         <Bean color={theme.colors.pink300} visible={inView} />
         <Row>
           <Column sm={12} md={12} lg={12}>
-            <h2>¿Listo para unirte?</h2>
+            <motion.h2
+              variants={headingAnimation}
+              initial="hidden"
+              animate={inView && 'visible'}
+              transition={{
+                default: { duration: 1, ease: 'easeInOut' },
+              }}
+            >
+              ¿Listo para unirte?
+            </motion.h2>
             <h3>Ayúdanos a desarrollar una plataforma útil para ti.</h3>
             <Button onClick={() => console.log('Open Modal')}>
               Unirme a la prueba beta

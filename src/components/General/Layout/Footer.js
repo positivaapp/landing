@@ -107,7 +107,7 @@ const Footer = () => {
       <Container spacingY={6}>
         <Row>
           <Column sm={12} md={12} lg={12}>
-            <Link to="/">
+            <Link aria-current="page" to="/">
               <Brand color={theme.colors.white200} />
             </Link>
           </Column>
@@ -147,7 +147,9 @@ const Footer = () => {
               <ul>
                 {footerLinks.legal.map(({ name, path }) => (
                   <li key={name}>
-                    <Link to={path}>{name}</Link>
+                    <Link aria-current="page" to={path}>
+                      {name}
+                    </Link>
                   </li>
                 ))}
               </ul>

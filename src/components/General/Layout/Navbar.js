@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <Container fullWidth spacingY={1.125}>
-        <Link to="/">
+        <Link aria-current="page" to="/">
           <Brand color={theme.colors.blue100} />
         </Link>
       </Container>

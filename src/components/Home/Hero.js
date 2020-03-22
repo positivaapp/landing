@@ -9,6 +9,7 @@ import Button from '../General/Buttons'
 import illustration from '../../assets/images/Illustration.svg'
 import Bean from '../General/Others/Bean'
 import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 /***************************/
 /******** CSS IN JS ********/
@@ -136,17 +137,35 @@ const Hero = () => {
     threshold: 0,
   })
 
+  const headingAnimation = {
+    hidden: {
+      opacity: 0,
+      y: '-5%',
+    },
+    visible: {
+      opacity: 1,
+      y: '0',
+    },
+  }
+
   return (
     <StyledHero>
       <Row colGap={0}>
         <Column sm={12} md={12} lg={6}>
           <Container>
-            <h1>
+            <motion.h1
+              variants={headingAnimation}
+              initial="hidden"
+              animate={inView && 'visible'}
+              transition={{
+                default: { duration: 0.5, ease: 'easeInOut' },
+              }}
+            >
               Salud estable y vida{' '}
               <Outline color={theme.colors.pink300} width={1.125}>
                 positiva
               </Outline>
-            </h1>
+            </motion.h1>
             <h2>
               Una plataforma segura para monitorear tu salud y encontrar apoyo.
             </h2>
