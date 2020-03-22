@@ -55,6 +55,7 @@ const StyledFooter = styled.footer`
         }
         blockquote {
           color: ${({ theme }) => theme.colors.white100};
+          line-height: 1.5;
         }
       }
     }

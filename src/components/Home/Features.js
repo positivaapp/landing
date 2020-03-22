@@ -35,7 +35,7 @@ const StyledFeatures = styled.section`
   ul {
     list-style: none;
     li {
-      margin-bottom: 6rem;
+      margin-bottom: 7.5rem;
       :last-child {
         margin-bottom: 2rem;
       }

@@ -48,6 +48,10 @@ const StyledFeature = styled.article`
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
+      p {
+        line-height: 1.5;
+        font-size: 1.125rem;
+      }
       @media (min-width: ${({ theme }) => theme.mediaqueries.md}) {
         margin-left: 1rem;
         h3 {
