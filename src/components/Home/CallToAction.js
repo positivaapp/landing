@@ -113,7 +113,7 @@ const CTA = () => {
           <Column sm={12} md={12} lg={12}>
             <h2>¿Listo para unirte?</h2>
             <h3>Ayúdanos a desarrollar una plataforma útil para ti.</h3>
-            <Button onClick={() => alert('Modal Open')}>
+            <Button onClick={() => console.log('Open Modal')}>
               Unirme a la prueba beta
             </Button>
           </Column>

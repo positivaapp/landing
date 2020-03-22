@@ -1,9 +1,11 @@
+import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 /***************************/
 /******** CSS IN JS ********/
 /***************************/
-const Button = styled.button`
+const MotionButton = styled(motion.button)`
   color: ${({ theme }) => theme.colors.white200};
   background: ${({ theme }) => theme.colors.blue100};
   text-transform: uppercase;
@@ -22,11 +24,19 @@ const Button = styled.button`
   :active,
   :focus {
     background: ${({ theme }) => theme.colors.blue200};
-    box-shadow: 0px 3px 1px -2px rgba(33, 29, 127, 0.2),
-      0px 2px 2px 0px rgba(33, 29, 127, 0.14),
-      0px 1px 5px 0px rgba(33, 29, 127, 0.12);
-    transform: scale(1.01);
   }
 `
+
+const Button = props => {
+  return (
+    <MotionButton
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.9 }}
+      {...props}
+    >
+      {props.children}
+    </MotionButton>
+  )
+}
 
 export default Button

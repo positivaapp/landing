@@ -138,7 +138,7 @@ const Hero = () => {
             <h2>
               Una plataforma segura para monitorear tu salud y encontrar apoyo.
             </h2>
-            <Button onClick={() => alert('Modal Open')}>
+            <Button onClick={() => console.log('Open Modal')}>
               Unirme a la prueba beta
             </Button>
           </Container>
