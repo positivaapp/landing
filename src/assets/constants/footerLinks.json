@@ -1,0 +1,22 @@
+{
+  "social": [
+    {
+      "name": "Facebook",
+      "path": "https://facebook.com"
+    },
+    {
+      "name": "Instagram",
+      "path": "https://instagram.com"
+    }
+  ],
+  "legal": [
+    {
+      "name": "Términos y condiciones",
+      "path": "/"
+    },
+    {
+      "name": "Aviso de privacidad",
+      "path": "/"
+    }
+  ]
+}
